@@ -17,7 +17,10 @@ urlpatterns = [
      path('task-list/', TaskList.as_view(), name='api-tasklist'),
      path('task-detail/<str:pk>/', TaskDetail.as_view(), name='api-taskdetail'),
 
-     path('users/', views.UserList.as_view()),
-     path('users/<int:pk>/', views.UserDetail.as_view()),
+     path('users/', views.UserList.as_view(), name='api-userlist'),
+     path('users/<int:pk>/', views.UserDetail.as_view(), name='api-userdetail'),
+
+      path('users/create/', views.CreateUserView.as_view(), name='api-usercreate'),
+      
      
 ]  
